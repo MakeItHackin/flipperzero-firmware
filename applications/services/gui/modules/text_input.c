@@ -138,12 +138,33 @@ static bool char_is_lowercase(char letter) {
 static char char_to_uppercase(const char letter) {
     if(letter == '_') {
         return 0x20;
+    } else if(letter == '1') {
+        return 0x21;
+    } else if(letter == '2') {
+        return 0x40;
+    } else if(letter == '3') {
+        return 0x23;
+    } else if(letter == '4') {
+        return 0x24;
+    } else if(letter == '5') {
+        return 0x25;
+    } else if(letter == '6') {
+        return 0x5E;
+    } else if(letter == '7') {
+        return 0x26;
+    } else if(letter == '8') {
+        return 0x2A;
+    } else if(letter == '9') {
+        return 0x28;
+    } else if(letter == '0') {
+        return 0x29;
     } else if(islower(letter)) {
         return (letter - 0x20);
     } else {
         return letter;
     }
 }
+
 
 static void text_input_backspace_cb(TextInputModel* model) {
     uint8_t text_length = model->clear_default_text ? 1 : strlen(model->text_buffer);
